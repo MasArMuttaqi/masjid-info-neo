@@ -14,7 +14,8 @@ body{
   .ratio-16-9 {
     width: 100%;
     aspect-ratio: 16 / 9;
-    overflow: hidden; /* Agar konten tidak keluar garis */
+    /*overflow: hidden; */
+    /* Agar konten tidak keluar garis */
     position: relative;
   }
 

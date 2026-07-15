@@ -2,7 +2,7 @@ let jadwal = {};
 const today_date = new Date().toISOString().split("T")[0];
 
     //AMBIL JADWAL SHOLAT
-fetch("https://raw.githubusercontent.com/MasArMuttaqi/masjid-info/refs/heads/main/src/json/JadwalSholat.json")
+fetch("https://masarmuttaqi.github.io/masjid-info/src/json/JadwalSholat.json")
     .then(response => response.json())
     .then(data => {
         jadwal = data.find(item => item.TANGGAL === today_date);
@@ -186,7 +186,7 @@ function syncJeda() {
   //   console.warn("❌ Gagal sync jeda:", error);
   // });
 
-  fetch("https://raw.githubusercontent.com/MasArMuttaqi/masjid-info/refs/heads/main/src/json/jeda_iqomah.json")
+  fetch("https://masarmuttaqi.github.io/masjid-info/src/json/jeda_iqomah.json")
     .then(response => response.json())
     .then(data => {
       const newJedaJSON = JSON.stringify(data);
@@ -228,7 +228,7 @@ let audioUnlocked = false;
 
 function initAudio() {
   if (!audioEndIqomah) {
-    audioEndIqomah = new Audio("https://raw.githubusercontent.com/MasArMuttaqi/masjid-info/refs/heads/main/src/audio/videoplayback.m4a");
+    audioEndIqomah = new Audio("https://masarmuttaqi.github.io/masjid-info/src/audio/beep-alarm-366507.mp3");
     audioEndIqomah.preload = "auto";
   }
 }

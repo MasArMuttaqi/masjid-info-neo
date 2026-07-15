@@ -1,3 +1,5 @@
+
+
 // Mapping Nama Bulan Hijriah ke Bahasa Indonesia
 const hijriMonthNames = {
   '01': 'Muharram',
@@ -15,16 +17,15 @@ const hijriMonthNames = {
 };
 
 // Data Koreksi: "Tahun-Bulan Hijriah": "Tanggal 1 Masehi-nya"
-const rukyahCorrection1 = {
-    "1447-01": "2025-06-26",
-    "1447-02": "2025-07-26",
-    "1447-03": "2025-08-25",
-    "1447-09": "2026-02-18",
-    "1447-10": "2026-03-21",
-    "1447-11": "2026-04-19",
-    "1447-12": "2026-05-18",
-    "1448-01": "2026-06-17"
-};
+let rukyahCorrection1 = {};
+fetch("https://masarmuttaqi.github.io/almanak/data/koreksirukyah.json")
+    .then(response => response.json())
+    .then(data => {
+        rukyahCorrection1 = data;
+      // console.log(rukyahCorrection1);
+
+    })
+    .catch(err => console.error(err));
 
 function convertToHijriWithRukyah(inputDate = null) {
 
