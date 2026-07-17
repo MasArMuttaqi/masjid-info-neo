@@ -421,6 +421,7 @@ function updateCountdown() {
   // ==== Kasus khusus Jumatan (90 menit) ====
   const KHUTBAH_MULAI_SEBELUM = 10; // menit sebelum Zuhur
   const KHUTBAH_TOTAL = 90;         // total durasi menit
+  // let jumatanBerlangsung = false;
 
 
   if (now.getDay() === 5) {
@@ -448,12 +449,13 @@ function updateCountdown() {
               const menit = Math.floor((sisa % 3600000) / 60000);
               const detik = Math.floor((sisa % 60000) / 1000);
 
-              $("#statusSholat").html("Khutbah Jum'at sedang berlangsung");
+              $("#statusSholat").html("Khutbah dan sholat Jum'at sedang berlangsung");
               $("#Nextprayer").html("Sholat Jum'at");
               $("#countdown").html(
-                  `Sisa ${jam} jam ${menit} menit ${detik} detik`
+                  `- ${jam} : ${menit} : ${detik}`
               );
-              $("#countdown").css("display", "none");
+              // $("#countdown").css("display", "none");
+              // jumatanBerlangsung = true;
               $("#icon-keterangan")
                   .show()
                   .attr("src", "https://lh3.googleusercontent.com/d/1ACEs1pqksBtOHRCzKcNdrwlLjRIiihfw=w800?authuser=1");
